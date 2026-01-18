@@ -12,9 +12,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { z } from "zod";
+import { toast } from "sonner";
+
+const contactSchema = z.object({
+  firstName: z.string().trim().min(1, "First name is required").max(50, "First name too long"),
+  lastName: z.string().trim().min(1, "Last name is required").max(50, "Last name too long"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
+  subject: z.string().trim().min(1, "Subject is required").max(200, "Subject too long"),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message too long"),
+  service: z.string().optional(),
+});
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "contact@Neogloss.com" },
+  { icon: Mail, label: "Email", value: "ajvsinfotech@gmail.com" },
   { icon: MapPin, label: "Address", value: "Mumbai, India" },
   { icon: Clock, label: "Working Hours", value: "Monday - Friday: 9am - 6pm IST" },
 ];
@@ -22,6 +33,7 @@ const contactInfo = [
 export const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -33,8 +45,31 @@ export const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+    setErrors({});
+
+    const result = contactSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast.error("Please fix the errors in the form");
+      return;
+    }
+
+    const serviceName = formData.service ? `\nService: ${formData.service}` : "";
+    const mailtoLink = `mailto:ajvsinfotech@gmail.com?subject=${encodeURIComponent(
+      formData.subject || "Contact Form Submission"
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n\nEmail: ${formData.email}${serviceName}\n\nMessage:\n${formData.message}`
+    )}`;
+
+    window.location.href = mailtoLink;
+    toast.success("Opening your email client...");
   };
 
   return (
@@ -138,8 +173,9 @@ export const ContactSection = () => {
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                     placeholder="John"
-                    className="bg-secondary/50 border-border"
+                    className={`bg-secondary/50 border-border ${errors.firstName ? "border-destructive" : ""}`}
                   />
+                  {errors.firstName && <p className="text-destructive text-xs mt-1">{errors.firstName}</p>}
                 </div>
                 <div>
                   <label className="text-sm text-muted-foreground mb-2 block">
@@ -149,8 +185,9 @@ export const ContactSection = () => {
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                     placeholder="Doe"
-                    className="bg-secondary/50 border-border"
+                    className={`bg-secondary/50 border-border ${errors.lastName ? "border-destructive" : ""}`}
                   />
+                  {errors.lastName && <p className="text-destructive text-xs mt-1">{errors.lastName}</p>}
                 </div>
               </div>
 
@@ -163,8 +200,9 @@ export const ContactSection = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="john@example.com"
-                  className="bg-secondary/50 border-border"
+                  className={`bg-secondary/50 border-border ${errors.email ? "border-destructive" : ""}`}
                 />
+                {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
               </div>
 
               <div>
@@ -197,8 +235,9 @@ export const ContactSection = () => {
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   placeholder="How can we help you?"
-                  className="bg-secondary/50 border-border"
+                  className={`bg-secondary/50 border-border ${errors.subject ? "border-destructive" : ""}`}
                 />
+                {errors.subject && <p className="text-destructive text-xs mt-1">{errors.subject}</p>}
               </div>
 
               <div>
@@ -210,8 +249,9 @@ export const ContactSection = () => {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us about your project..."
                   rows={5}
-                  className="bg-secondary/50 border-border resize-none"
+                  className={`bg-secondary/50 border-border resize-none ${errors.message ? "border-destructive" : ""}`}
                 />
+                {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
               </div>
 
               <Button variant="glow" size="lg" className="w-full">
