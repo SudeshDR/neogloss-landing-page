@@ -135,13 +135,13 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-foreground font-medium">India</p>
-                  <p className="text-sm text-muted-foreground">Ghatkopar, Mumbai</p>
+                  <p className="text-sm text-muted-foreground">Mumbai</p>
                 </div>
               </div>
             </div>
 
             {/* CTA */}
-            <div className="glass-card rounded-2xl p-6">
+            {/* <div className="glass-card rounded-2xl p-6">
               <p className="text-muted-foreground mb-4">
                 Prefer to schedule a call?
               </p>
@@ -149,7 +149,7 @@ export const ContactSection = () => {
                 <Calendar className="w-4 h-4" />
                 Book a Free Consultation
               </Button>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Contact Form */}
@@ -172,7 +172,7 @@ export const ContactSection = () => {
                   <Input
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                    placeholder="John"
+                    placeholder="Neogloss"
                     className={`bg-secondary/50 border-border ${errors.firstName ? "border-destructive" : ""}`}
                   />
                   {errors.firstName && <p className="text-destructive text-xs mt-1">{errors.firstName}</p>}
@@ -184,7 +184,7 @@ export const ContactSection = () => {
                   <Input
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                    placeholder="Doe"
+                    placeholder="Infotech"
                     className={`bg-secondary/50 border-border ${errors.lastName ? "border-destructive" : ""}`}
                   />
                   {errors.lastName && <p className="text-destructive text-xs mt-1">{errors.lastName}</p>}
@@ -199,7 +199,7 @@ export const ContactSection = () => {
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="john@example.com"
+                  placeholder="ni@example.com"
                   className={`bg-secondary/50 border-border ${errors.email ? "border-destructive" : ""}`}
                 />
                 {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}

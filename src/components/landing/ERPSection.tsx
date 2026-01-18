@@ -14,13 +14,10 @@ import {
 } from "lucide-react";
 
 const modules = [
-  { icon: ShoppingCart, title: "Procurement to Pay", description: "Streamline procurement processes through a central program." },
   { icon: FolderKanban, title: "Project Management", description: "Manage projects based on milestones and dependencies." },
-  { icon: ClipboardCheck, title: "Compliance Management", description: "Cloud-based solution for compliance oversight and visibility." },
   { icon: Users2, title: "Vendor Management", description: "Collaborate with vendors through an automated platform." },
   { icon: Package, title: "Inventory Management", description: "Remotely manage inventory with cloud-based solutions." },
   { icon: Receipt, title: "Sales Order Management", description: "Automate your order-to-cash processes efficiently." },
-  { icon: Landmark, title: "Asset Management", description: "Track all assets in real-time with advanced features." },
   { icon: FileText, title: "E-Invoicing", description: "Ease invoicing burdens, compatible with all ERPs." },
   { icon: Factory, title: "Manufacturing ERP", description: "Automate production for higher flexibility." },
 ];
@@ -85,31 +82,6 @@ export const ERPSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="glass-card rounded-2xl p-8 text-center">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
-              ERP Partner Spotlight
-            </span>
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-                <span className="font-display font-bold text-primary-foreground text-xl">O</span>
-              </div>
-              <span className="font-display text-2xl font-bold text-foreground">Odoo Partner</span>
-            </div>
-            <p className="text-muted-foreground mb-6">
-              Worldwide ERP solution • Cloud or On-Premise • Adapted for small & mid-market businesses
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-secondary text-sm text-muted-foreground">
-                40,000+ apps available
-              </span>
-              <span className="px-3 py-1 rounded-full bg-secondary text-sm text-muted-foreground">
-                Per-user pricing
-              </span>
-              <span className="px-3 py-1 rounded-full bg-secondary text-sm text-muted-foreground">
-                Enterprise ready
-              </span>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

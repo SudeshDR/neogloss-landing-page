@@ -15,71 +15,72 @@ import { Button } from "@/components/ui/button";
 const services = [
   {
     icon: Globe,
-    title: "Web Development",
-    description: "Custom websites, progressive web apps, e-commerce solutions, and content management systems tailored to your business needs.",
+    title: "Static Websites",
+    description: "Simple, fast-loading websites designed for businesses that need an online presence without complex backend requirements.",
     features: [
       "Responsive design for all devices",
-      "SEO optimization built-in",
-      "Performance-optimized code",
-      "Complete CMS integration",
-    ],
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity",
-    description: "Comprehensive security audits, penetration testing, managed security services, and incident response planning.",
-    features: [
-      "Vulnerability assessment",
-      "Security infrastructure setup",
-      "24/7 threat monitoring",
-      "Compliance management",
+      "SEO-friendly structure",
+      "Lightweight and fast",
+      "Easy content updates",
     ],
   },
   {
     icon: Rocket,
-    title: "Digital Transformation",
-    description: "End-to-end digital transformation solutions that modernize business processes and enhance customer engagement.",
+    title: "Dynamic Websites",
+    description: "Interactive websites with dynamic content, user login, and backend integration for modern business needs.",
     features: [
-      "Process automation",
-      "Cloud adoption & scalability",
-      "Data-driven decision making",
-      "Enhanced customer experience",
-    ],
-  },
-  {
-    icon: Video,
-    title: "AV Services",
-    description: "Professional audio-video solutions including system integration, event production, and conference room setups.",
-    features: [
-      "High-quality AV setup",
-      "Live streaming & recording",
-      "AV system integration",
-      "On-site technical support",
+      "Database-driven content",
+      "User authentication & management",
+      "Customizable functionality",
+      "Real-time updates and notifications",
     ],
   },
   {
     icon: Cloud,
-    title: "Cloud Services",
-    description: "Cloud migration, infrastructure management, DevOps solutions, and serverless architecture implementation.",
+    title: "Data Collection & Analysis",
+    description: "Gather, store, and analyze business or user data to derive actionable insights for decision-making.",
     features: [
-      "Multi-cloud strategy",
-      "Cost optimization",
-      "Automated CI/CD pipelines",
-      "Disaster recovery planning",
+      "Automated data collection",
+      "Data cleaning & processing",
+      "Custom analytics dashboards",
+      "Reports & visualizations",
     ],
   },
   {
-    icon: Database,
-    title: "ERP Implementation",
-    description: "Comprehensive ERP solutions to streamline operations and provide real-time insights for better decision-making.",
+    icon: Cloud,
+    title: "Cloud Hosting",
+    description: "Secure and scalable cloud hosting solutions for websites, apps, and databases with high availability.",
     features: [
-      "End-to-end integration",
-      "Real-time reporting",
-      "Custom module development",
-      "Scalable architecture",
+      "Multi-cloud deployment options",
+      "Scalable infrastructure",
+      "Automated backups",
+      "High security and uptime",
+    ],
+  },
+  {
+    icon: Rocket,
+    title: "Prebuilt Web Tools",
+    description: "Ready-to-use web tools and templates that accelerate project deployment and reduce development time.",
+    features: [
+      "Templates for websites and apps",
+      "Plug-and-play functionality",
+      "Customizable UI components",
+      "Time-saving integrations",
+    ],
+  },
+  {
+    icon: Globe,
+    title: "Customized Tools",
+    description: "Tailor-made web applications and tools designed to meet specific business requirements and workflows.",
+    features: [
+      "Custom application development",
+      "Integration with existing systems",
+      "User-specific functionality",
+      "Ongoing support and updates",
     ],
   },
 ];
+
 
 export const ServicesSection = () => {
   const ref = useRef(null);
@@ -144,10 +145,7 @@ export const ServicesSection = () => {
                 ))}
               </div>
 
-              <Button variant="ghost" className="group/btn p-0 h-auto text-primary hover:text-primary">
-                Learn More
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Button>
+            
             </motion.div>
           ))}
         </div>

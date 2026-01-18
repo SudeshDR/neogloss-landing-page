@@ -25,8 +25,13 @@ export const Navbar = () => {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-lg">N</span>
+              <img
+                src="./Neogloss.png"
+                alt="Neogloss"
+                className="w-6 h-6 object-contain"
+              />
             </div>
+
             <span className="font-display font-bold text-xl text-foreground">
               Neogloss
             </span>
@@ -46,14 +51,14 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* <div className="hidden md:flex items-center gap-4">
             <Button variant="ghost" size="sm">
               Log In
             </Button>
             <Button variant="hero" size="sm">
               Get Started
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button

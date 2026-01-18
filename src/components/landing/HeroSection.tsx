@@ -36,7 +36,7 @@ export const HeroSection = () => {
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
             Empowering Ideas with{" "}
-            <span className="gradient-text">Tech Solutions</span>
+            <span className="gradient-text">Neogloss Infotech</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -57,13 +57,6 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="glow" size="xl">
-              Get Started
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="heroOutline" size="xl">
-              Contact Us
-            </Button>
           </motion.div>
 
           {/* Stats */}
@@ -75,7 +68,7 @@ export const HeroSection = () => {
           >
             {[
               { value: "10+", label: "Technology Experts" },
-              { value: "100+", label: "Projects Delivered" },
+              { value: "10+", label: "Projects Delivered" },
               { value: "98%", label: "Client Retention" },
               { value: "4+", label: "Years Experience" },
             ].map((stat, index) => (
