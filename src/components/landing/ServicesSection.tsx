@@ -3,14 +3,12 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { 
   Globe, 
-  Shield, 
   Rocket, 
-  Video, 
+  Wrench, 
+  BarChart3, 
   Cloud, 
-  Database,
-  ArrowRight 
+  Share2,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const services = [
   {
@@ -27,18 +25,29 @@ const services = [
   {
     icon: Rocket,
     title: "Dynamic Websites",
-    description: "Interactive websites with dynamic content, user login, and backend integration for modern business needs.",
+    description: "Interactive websites with dynamic content, user authentication, and backend integration for modern business needs.",
     features: [
       "Database-driven content",
       "User authentication & management",
+      "Real-time updates",
       "Customizable functionality",
-      "Real-time updates and notifications",
     ],
   },
   {
-    icon: Cloud,
-    title: "Data Collection & Analysis",
-    description: "Gather, store, and analyze business or user data to derive actionable insights for decision-making.",
+    icon: Wrench,
+    title: "Customised Tools",
+    description: "Tailor-made web applications and tools designed to meet your specific business requirements and workflows.",
+    features: [
+      "Custom application development",
+      "Integration with existing systems",
+      "User-specific functionality",
+      "Ongoing support and updates",
+    ],
+  },
+  {
+    icon: BarChart3,
+    title: "Data Analysis",
+    description: "Gather, process, and analyze business data to derive actionable insights for smarter decision-making.",
     features: [
       "Automated data collection",
       "Data cleaning & processing",
@@ -51,32 +60,21 @@ const services = [
     title: "Cloud Hosting",
     description: "Secure and scalable cloud hosting solutions for websites, apps, and databases with high availability.",
     features: [
-      "Multi-cloud deployment options",
+      "Multi-cloud deployment",
       "Scalable infrastructure",
       "Automated backups",
       "High security and uptime",
     ],
   },
   {
-    icon: Rocket,
-    title: "Prebuilt Web Tools",
-    description: "Ready-to-use web tools and templates that accelerate project deployment and reduce development time.",
+    icon: Share2,
+    title: "Social Media Management",
+    description: "Complete social media management for YouTube, Instagram, Facebook, and more to grow your brand presence.",
     features: [
-      "Templates for websites and apps",
-      "Plug-and-play functionality",
-      "Customizable UI components",
-      "Time-saving integrations",
-    ],
-  },
-  {
-    icon: Globe,
-    title: "Customized Tools",
-    description: "Tailor-made web applications and tools designed to meet specific business requirements and workflows.",
-    features: [
-      "Custom application development",
-      "Integration with existing systems",
-      "User-specific functionality",
-      "Ongoing support and updates",
+      "Content creation & scheduling",
+      "Audience engagement",
+      "Analytics & reporting",
+      "Multi-platform management",
     ],
   },
 ];
