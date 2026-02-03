@@ -217,12 +217,12 @@ export const ContactSection = () => {
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="web">Web Development</SelectItem>
-                    <SelectItem value="security">Cybersecurity</SelectItem>
-                    <SelectItem value="cloud">Cloud Services</SelectItem>
-                    <SelectItem value="erp">ERP Implementation</SelectItem>
-                    <SelectItem value="av">AV Services</SelectItem>
-                    <SelectItem value="transformation">Digital Transformation</SelectItem>
+                    <SelectItem value="static">Static Websites</SelectItem>
+                    <SelectItem value="dynamic">Dynamic Websites</SelectItem>
+                    <SelectItem value="tools">Customised Tools</SelectItem>
+                    <SelectItem value="data">Data Analysis</SelectItem>
+                    <SelectItem value="cloud">Cloud Hosting</SelectItem>
+                    <SelectItem value="social">Social Media Management</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
