@@ -25,7 +25,7 @@ const contactSchema = z.object({
 });
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "ajvsinfotech@gmail.com" },
+  { icon: Mail, label: "Email", value: "neoglossinfotech@gmail.com" },
   { icon: MapPin, label: "Address", value: "Mumbai, India" },
   { icon: Clock, label: "Working Hours", value: "Monday - Friday: 9am - 6pm IST" },
 ];
@@ -62,7 +62,7 @@ export const ContactSection = () => {
     }
 
     const serviceName = formData.service ? `\nService: ${formData.service}` : "";
-    const mailtoLink = `mailto:ajvsinfotech@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:neoglossinfotech@gmail.com?subject=${encodeURIComponent(
       formData.subject || "Contact Form Submission"
     )}&body=${encodeURIComponent(
       `Name: ${formData.firstName} ${formData.lastName}\n\nEmail: ${formData.email}${serviceName}\n\nMessage:\n${formData.message}`
