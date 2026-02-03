@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaInstagram, FaWhatsapp, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const quickLinks = [
   { name: "Home", href: "#" },
@@ -104,30 +104,25 @@ export const Footer = () => {
 
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/neoglossinfotech/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center
-                 text-muted-foreground hover:text-pink-500 hover:bg-secondary/80 transition-colors"
+                 text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
               >
                 <FaInstagram size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://wa.me/919255179727"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center
-                 text-muted-foreground hover:text-green-500 hover:bg-secondary/80 transition-colors"
+                 text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
               >
                 <FaWhatsapp size={18} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center
-                 text-muted-foreground hover:text-sky-500 hover:bg-secondary/80 transition-colors"
-              >
-                <FaTwitter size={18} />
               </a>
             </div>
           </motion.div>
